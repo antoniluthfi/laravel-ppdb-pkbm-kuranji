@@ -22,7 +22,7 @@ class UserController extends Controller
 
     public function getDataById($id)
     {
-        $user = User::find($id);
+        $user = User::with('berkas', 'pendaftaran')->find($id);
 
         return response()->json([
             'status' => 'OK',

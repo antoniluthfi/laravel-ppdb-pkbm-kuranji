@@ -121,7 +121,7 @@ class PendaftaranController extends Controller
 
     public function delete($id)
     {
-        $pendaftaran = Pendaftaran::with('user')->where('user_id', $id)->first();
+        $pendaftaran = Pendaftaran::where('user_id', $id)->first();
         $pendaftaran->delete();
 
         return response()->json([

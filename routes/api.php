@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('user/role/{role}', [UserController::class, 'getUserByRole']);
     Route::post('user', [UserController::class, 'create']);
     Route::put('user/{id}', [UserController::class, 'update']);
-    Route::delete('user', [UserController::class, 'delete']);
+    Route::delete('user/{id}', [UserController::class, 'delete']);
 
     Route::get('berkas', [BerkasController::class, 'index']);
     Route::get('berkas/{id}', [BerkasController::class, 'getDataById']);
@@ -50,5 +50,5 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('pendaftaran/count/total/program-paket', [PendaftaranController::class, 'getDataByProgramPaket']);
     Route::post('pendaftaran', [PendaftaranController::class, 'create']);
     Route::put('pendaftaran/{id}', [PendaftaranController::class, 'update']);
-    Route::delete('pendaftaran', [PendaftaranController::class, 'delete']);
+    Route::delete('pendaftaran/{id}', [PendaftaranController::class, 'delete']);
 });

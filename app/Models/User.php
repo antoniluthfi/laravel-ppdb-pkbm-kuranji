@@ -64,7 +64,7 @@ class User extends Authenticatable
 
     public function berkas()
     {
-        return $this->hasOne(Berkas::class, 'user_id', 'id')->select('user_id');
+        return $this->hasOne(Berkas::class, 'user_id', 'id');
     }
 
     public function pendaftaran()
