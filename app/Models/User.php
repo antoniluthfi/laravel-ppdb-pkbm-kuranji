@@ -69,7 +69,7 @@ class User extends Authenticatable
 
     public function pendaftaran()
     {
-        return $this->hasOne(Pendaftaran::class, 'user_id', 'id')->select('user_id');
+        return $this->hasOne(Pendaftaran::class, 'user_id', 'id');
     }
 
     public function OauthAccessToken()

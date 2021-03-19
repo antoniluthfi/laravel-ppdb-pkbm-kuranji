@@ -11,8 +11,8 @@ class CetakLaporanController extends Controller
 {
     public function cetakLaporan($tipeLaporan, $str = null)
     {
-        if($tipeLaporan === 'data-user') {
-            $data = User::where('id', $str)->first();
+        if($tipeLaporan === 'data-user' || $tipeLaporan === 'kartu-pendaftaran') {
+            $data = User::with('pendaftaran')->where('id', $str)->first();
             $array = ['data' => $data];
         }
 
